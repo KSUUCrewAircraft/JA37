@@ -1,0 +1,132 @@
+TODO for Flightgear JA-37
+=========================
+
+
+Features and improvements:
+--------------------------
+GUI: Option to turn off verbose popups.
+GUI: Improve Checklists.
+GUI: Option to switch off hitting stuff above ground. (switched off now, might confuse users)
+GUI: Remove from options: Radar, Radar screen and maybe reverse on touchdown. As all these now has switches in cockpit.
+Aero: Make cannon pod detachable and have pointweight. (and model it above drop-tank)
+Aero: Air-brakes, even though they got welded shut in mid 80ties. (Request from JazzTp)
+Control: Pitch damper should also take lateral normal (Nz) acceleration as input as per manual.
+Control: Disable failure system from freezing surfaces (remove failure mode bug in 3.2- prevents)
+Model: Make minimal polygon model for multiplayer LOD.
+Model: Make liveries that is not 59, able to not have to use base texture.
+Model: Ext. power truck more mil style textures.
+Model: Put in more working instruments and controls.
+Model: Make gunpod, between the fuselage and droptank.
+Model: The canopy metal should be thinner and unpainted alu.
+Model: There should be mirrors on the canopy.
+Model: Put in not-working instruments and controls for immersion.
+Model: Some textures should be aligned so they can be better viewed from current pilot point of view.
+Model: The minimum AoA the indicator should show is -4 degrees, not -7.
+Model: The altimeter should have a standard button which set the pressure to 1013 hPa.
+Model: Fix that landing gear oleo struts now are too bright.
+Animation: Show wheels spinning in MP also.
+Animation: Proper animation of gear doors.
+Sim: Improve autopilot further. (alt-hold should use pitch not v-speed)
+Sim: Make autopilot depend fully on instrument properties not true properties.
+Sim: Implement ejection seat. (with parachute?)
+Sim: Make braking parachute.
+Sim: Reset controls after A/P let go of them.
+Sim: Stop using integers in xml where floating point is expected? (really not needed)
+Sim: Make verbose property to be used in all nasal scripts. (possible include in options)
+Sim: Air to ground guided missiles.
+Sim: Longer range air2air missiles.
+Sim: Make replay show the guided missiles flying.
+Sim: Improve terrain warning system.
+Sim: Replace generic setValue in nasal with specific types.
+Sim: Make droptank do collision detection. (use retractable)
+Sim: Make drop-tank fall down. (use slaved submodel)
+Sim: Missiles should lock onto flares.
+Sim: Lock warning when another plane get radar lock. (ja37, m2000-5, f-14b)
+Sim: Damage from missile explosion.
+Sim: Complete hydraulic dependencies. Brakes.
+Sim: Hydraulic drain.
+Sim: Shift-m should be a key without shift instead for convienience.
+Effect: Rembrandt landing lightcone.
+Effect: Make pilot faint/die due to G-forces.
+Effect: Make tires burst if too high speed with parking brakes.
+Effect: Smoke after structural break.
+Effect: Adjust normalmap to be more subtle.
+Sound: More annunciater warnings and other sounds. (transonic)
+Sound: Make sounds when taking damage in bombable.
+HUD: Make individual parts in HUD fail if the corresponding instrument fails. (like heading indicator etc.)
+HUD: Make boxes for desired pitch.
+HUD: Alt scale follow pitch lines at more than 1 degree roll from level flight. (swedish pilots seems able to read upside down, not sure I will make this)
+HUD: Make too low reference speed change reticle vertical tail down.
+HUD: All track semi circles and semi box should have a line in them. (might degrade performance)
+HUD: Sidewind indicator should really be 10 degs below plane axis line.
+HUD: Fix that HUD selects diamond_node, not radar logic, so HUD can be turned off in external view.
+
+
+Bugs:
+--------------
+Sound: If at the end of non-looped replay view mode is fly-by-view, sounds will continue looping. [not reproduced]
+Report: {JabberWocky} After A/P the plane consumes too much fuel. [not reproduceable]
+Sim: {JazzTp} On Linux, after firing first missile, the key bindings for weapons go to other things, like exit FG. [Cannot reproduce on Win]
+Sim: Missiles do not show when using FG 3.0, in FG 3.1+ they work fine. [reproduced]
+Sim: Missiles will not lock on to ferries that is missing the radar properties.
+Sim: Find out why cannon and sidewinder fire randomly after instant replay.
+Sim: {JazzTp} A repair did repair aircraft except for HUD, it was frozen. [not reproduced yet]
+Sim: {JazzTp} Radar screen did not see MP aircraft pass by. [not reproduced yet]
+Sim: When relocating or pausing, autostart might fail. [reproduced]
+Sim: Missile that misses dont seem to delete by altitude.
+Sim: When Bombable 4.5 is installed redout and blackout might not work properly. [related to certain Bombable settings I think]
+Sim: The auto-pilot can be bank unstable when auto-coordination is turned on.
+HUD: {JazzTp} When FG HUD is in 2nd or 3rd mode, it does not go away when switching to custom. [reproduced]
+HUD: I have experienced that tactical mode was on by default. [not reliable reproduced]
+HUD: When the altitude difference to a track is much larger than the horizontal distance, the track positions are off.
+GUI: The performance monitor can duplicate itself when selecting airport. [reproduced]
+Model: sim load-lag when coming near other ja37. [reproduced, select anims are probably to blame]
+Model: Sim lag at final retraction of gear. [reproduced, select anims are to blame]
+Model: CTRL-X in HUD view will not zoom to correct level.
+Animation: Selection view does not follow carriers or other ships till they move. (they lack radar properties)
+Model: In FG 2.12 radar screen does not work as it should. (no canvas replacement)
+Sim: Sometimes when exploding, the sim freezes, typically at redout.
+Sim: {JazzTP} Replay did not replay explosion.
+Sound: Could hear aim-9 buzz even though not in tact mode, in external view.
+HUD: In landing mode when horizont is out of view, heading scale does not show commanded heading.
+HUD: In landing mode, commanded altitude lines can be confused with ILS guidance.
+Sim: If track type is selected in HUD, when missile hit the message will display the type, not callsign.
+
+
+Issues with FG: (or my limited understanding of it)
+---------------
+Effect: Rembrandt does not make the engine flame lit enough, unless diffuse and ambient is increased also.
+
+
+Compatible version with FG 2.6 (on hold, as it crashes when loading ja37)
+------------------------------
+Smaller textures
+Less polygons
+Less particle effects
+No radar (done)
+No custom HUD (done)
+Default FG HUD (done)
+
+
+Livery work
+-----------
+Model: Improve the 31-F17 grey livery.
+Model: Improve the 32-F17 Blå Petter livery. (Blue Peter)
+Model: Improve the 59-F16 grey livery.
+Model: Improve the 61-F18 strike camo livery.
+Model: Improve the 57-F21 red 'ghost' livery.
+Model: Improve the 46-F04 unknown export livery - Great lake monster.
+Model: Improve the 02-F21 swedish sun livery.
+Model: Improve the Flightgear livery.
+Model: Make the 11-F16 black/grey camo livery.
+Model: Make the 12-F04 black and gold livery.
+Model: Make the 48-F21 finnish export livery. (Akktu Stakki - Lonely Wolf)
+
+
+Require more data: (or aerodynamic know-how)
+------------------
+Aero: Detailed axial coefficients.
+Aero: Mass distribution.
+Aero: Detailed high speed aerodynamics.
+Aero: Accurate weight of empty drop tank.
+Aero: Weight of 30mm cannon pod.
