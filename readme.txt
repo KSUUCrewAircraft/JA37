@@ -2,13 +2,15 @@
 Readme for the JA-37 Viggen aircraft for the Flightgear simulator:
 ==================================================================
 
-Install
+Install--general public
 ----------
 1 - Have flightgear installed. Version 2.8.0.2 to 3.6.0 is tested. Earlier version will not work, later might.
 2 - Copy the entire 'JA37' folder into a folder (must be called Aircraft) where Flightgear will look for aircraft.
 3 - Happy flying. Check the aircraft help page inside the sim for instructions.
 
-
+Install--KSUU Crew and Gitgurus
+----------
+Click the button that says clone in desktop. It will open the Github desktop app. Select the folder where you want it, and then press ok. You can now periodically update the a/c without having to download over and over again!
 Suggested Settings
 ------------------
 Wildfire: On (for crashing)
